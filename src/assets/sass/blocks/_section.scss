@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../global" as *;
+
+.section {
+}
+
+.section__inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  text-align: center;
+  padding-inline: size-calc(20, 140, 768, 1280);
+  @include mq(sp) {
+    padding-inline: revert;
+  }
+}
+
+.section__title {
+  .special-practice &,
+  .introduction & {
+    transform: translate(2px, 4px);
+  }
+  display: inline-block;
+  position: relative;
+  padding-inline: 95px;
+  @include font(28, 700, null, 2.24);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 67px;
+    height: 20px;
+    background: url(../img/section-bar.svg);
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  @include mq(sp) {
+    @include font(20, 700, null, 1.6);
+    padding-inline: 65px;
+
+    &::before,
+    &::after {
+      width: 49px;
+      height: 13px;
+      background: url(../img/section-bar-sp.svg);
+    }
+  }
+}

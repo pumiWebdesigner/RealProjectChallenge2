@@ -1,0 +1,74 @@
+@use "../global" as global;
+
+.p-pagination {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-pagination__prev,
+.p-pagination__next {
+  height: 40px;
+  width: 20px;
+  line-height: 38px;
+  position: relative;
+  color: gray;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: global.$ff-awesome;
+    font-weight: 900;
+    font-size: 30px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.p-pagination__prev {
+  margin-right: 8px;
+
+  &::after {
+    content: "\f104";
+  }
+}
+
+.p-pagination__next {
+  margin-left: 8px;
+
+  &::after {
+    content: "\f105";
+  }
+}
+
+.p-pagination__number {
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  color: gray;
+  display: inline-block;
+  font-family: global.$ff-en;
+  font-size: 20px;
+  height: 40px;
+  line-height: 38px;
+  min-width: 40px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover,
+  &.p-pagination__number--current {
+    background: global.$main-color;
+    border: 1px solid global.$main-color;
+    color: #fff;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,40 @@
+@use "../global" as global;
+
+.l-archive-main {
+}
+
+.l-archive-main__breadcrumb {
+  margin-bottom: 14px;
+}
+
+.l-archive-main__head {
+  margin-bottom: 70px;
+  padding-top: 28px;
+  border-top: 3px solid global.$main-color;
+
+  @include global.mq("sp") {
+    margin-bottom: 35px;
+  }
+}
+
+.l-archive-main__cards {
+}
+
+.l-archive-main__card {
+  &:nth-child(n + 2) {
+    margin-top: 30px;
+
+    @include global.mq("sp") {
+      margin-top: 20px;
+    }
+  }
+}
+
+.l-archive-main__pagination {
+  margin-top: 62px;
+  text-align: center;
+
+  @include global.mq("sp") {
+    margin-top: 40px;
+  }
+}

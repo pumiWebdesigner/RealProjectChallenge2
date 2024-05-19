@@ -1,0 +1,65 @@
+@use "sass:map";
+@use "../global" as *;
+
+.hidden-pc {
+  @media screen and (min-width: #{map.get($size,"sp-max") + 1}) {
+    display: none !important;
+  }
+}
+
+.hidden-sp {
+  @media screen and (max-width: #{map.get($size,"sp-max")}) {
+    display: none !important;
+  }
+}
+// 視覚的に認知できないユーザへの考慮。視覚的には要素を非表示にするが、スクリーンリーダーには読み上げられるようにする。
+.u-hidden-visually {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.dotted-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.dotted-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* アンダーラインとテキストの間の距離を調整 */
+  left: 0;
+  width: 100%;
+  height: 4px; /* この高さはドットの表示に直接関係ありませんが、コンテナとして機能します */
+  background-image: radial-gradient(circle 4px at center, currentColor 50%, transparent 50%);
+  background-size: 10px 4px;
+  background-repeat: repeat-x;
+  @include mq(sp) {
+    width: 103%; /* 点の数調整 */
+    bottom: -6px; /* アンダーラインとテキストの間の距離を調整 */
+    height: 2px;
+    background-image: radial-gradient(circle 2px at center, currentColor 50%, transparent 50%);
+    background-size: 6.4px 2px;
+    left: -2px;
+  }
+}
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  color: var(--font);
+}
+.mask {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: gray;
+}
+.accent {
+  color: var(--accent);
+}

@@ -1,0 +1,100 @@
+@use "../global" as global;
+
+// 目次
+.p-toc {
+  background: #fff;
+  border: 2px solid global.$main-color;
+  padding: 20px 30px;
+
+  @include global.mq("sp") {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.p-toc__title {
+  border-bottom: 2px solid global.$main-color;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-bottom: 6px;
+  text-align: center;
+
+  @include global.mq("sp") {
+    margin-bottom: 20px;
+  }
+}
+
+.p-toc__level1-lists {
+}
+
+.p-toc__level1-list {
+  counter-increment: toc;
+  margin-bottom: 20px;
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+.p-toc__level1-link {
+  display: inline-block;
+  padding-left: 36px;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    background: global.$main-color;
+    border-radius: 50%;
+    color: #fff;
+    content: counter(toc);
+    font-family: global.$ff-en;
+    font-weight: 700;
+    height: 26px;
+    left: 0;
+    line-height: 26px;
+    margin-top: -2px;
+    min-width: 26px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.p-toc__level2-lists {
+  margin-top: 6px;
+  padding-left: 36px;
+}
+
+.p-toc__level2-list {
+  margin-bottom: 2px;
+  margin-top: 0;
+}
+
+.p-toc__level2-link {
+  display: inline-block;
+  font-weight: 400;
+  padding-left: 10px;
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    background: global.$main-color;
+    border-radius: 50%;
+    content: "";
+    height: 5px;
+    left: 0;
+    min-width: initial;
+    position: absolute;
+    top: 8px;
+    width: 5px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

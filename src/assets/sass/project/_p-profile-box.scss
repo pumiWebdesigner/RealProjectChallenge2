@@ -1,0 +1,56 @@
+@use "../global" as global;
+
+.p-profile-box {
+
+}
+
+.p-profile-box__img {
+  margin-bottom: 26px;
+  text-align: center;
+
+	img {
+		width: 230px;
+	}
+}
+
+.p-profile-box__content {
+	font-size: 14px;
+  line-height: 1.71429;
+  margin-bottom: 38px;
+  padding: 0 18px;
+}
+
+.p-profile-box__sns {
+	align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.p-profile-box__sns-item {
+	&:nth-child(n + 2) {
+		margin-left: 40px;
+	}
+
+	a {
+		font-size: 26px;
+		color: inherit;
+		text-decoration: none;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&.p-profile-box__sns-item--twitter {
+		color: #1da1f2;
+	}
+
+	&.p-profile-box__sns-item--facebook {
+		color: #3b5998;
+	}
+
+	&.p-profile-box__sns-item--instagram {
+		color: #c13584;
+	}
+}

@@ -1,0 +1,64 @@
+@use "../global" as global;
+
+.p-entry-card-type2 {
+  display: inline-block;
+  color: inherit;
+  background-color: #fff;
+  box-shadow: 0 0 3px 0 rgba(#000, 0.16);
+  text-decoration: none;
+  transition: box-shadow 0.3s ease 0s;
+
+  &:hover {
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.16);
+  }
+}
+
+.p-entry-card-type2__img {
+  text-align: center;
+}
+
+.p-entry-card-type2__body {
+  padding: 20px;
+}
+
+.p-entry-card-type2__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.p-entry-card-type2__published {
+  margin-top: 4px;
+  color: #808080;
+  font-size: 12px;
+
+  &::before {
+    content: "\f073";
+    margin-right: 8px;
+    font-family: global.$ff-awesome;
+    font-weight: 400;
+  }
+}
+
+.p-entry-card-type2__tag {
+  display: block;
+  margin-right: 15px;
+  padding: 3px 14px 2px;
+  background-color: global.$main-color;
+  font-size: 12px;
+  color: #fff;
+}
+
+.p-entry-card-type2__title {
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.42;
+}
+
+.p-entry-card-type2__excerpt {
+  color: #454545;
+  font-size: 14px;
+  line-height: 1.71429;
+}

@@ -1,0 +1,24 @@
+@use "../global" as global;
+
+.c-entry-heading-type2 {
+  border-bottom: 3px solid global.$main-color;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding-bottom: 14px;
+
+  &::after {
+    border: 5px solid transparent;
+    border-top: 15px solid #ebebeb;
+    content: "";
+    height: 0;
+    left: 24px;
+    position: absolute;
+    top: 100%;
+    width: 0;
+  }
+
+  @include global.mq("sp") {
+    font-size: 20px;
+  }
+}

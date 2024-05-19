@@ -1,0 +1,31 @@
+@use "sass:map";
+
+$width: (
+  pc-comp: 1440,
+  tab-comp: 768,
+  sp-comp: 375,
+);
+
+@function size-calc($min-size: null, $max-size: null, $min-width: map.get($width, sp-comp), $max-width: map.get($width, pc-comp)) {
+  //  $min-size, $max-size：（必須項目）返り値の最小値と最大値
+  //  $min-width, $max-width：（任意項目）返り値の推奨値計算に使用。基準となる画面幅の最小値と最大値（もしくはカンプの横幅）
+
+  @if $min-size != null and $max-size != null {
+    @return clamp(#{$min-size}px, calc(#{$min-size}px + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width)), #{$max-size}px);
+  } @else {
+    @warn "!!!Missing or invalid arguments. 2 parameters (min-size, max-size) must be provided.!!!";
+    @return null;
+  }
+}
+
+@function size-calc2($min-size: null, $max-size: null, $min-width: map.get($width, sp-comp), $max-width: map.get($width, pc-comp)) {
+  //  $min-size, $max-size：（必須項目）返り値の最小値と最大値
+  //  $min-width, $max-width：（任意項目）返り値の推奨値計算に使用。基準となる画面幅の最小値と最大値（もしくはカンプの横幅）
+
+  @if $min-size != null and $max-size != null {
+    @return calc(#{$min-size}px + ($max-size - $min-size) * (100vw - #{$min-width}px) / ($max-width - $min-width));
+  } @else {
+    @warn "!!!Missing or invalid arguments. 2 parameters (min-size, max-size) must be provided.!!!";
+    @return null;
+  }
+}

@@ -1,0 +1,333 @@
+@use "sass:map";
+@use "../global" as *;
+
+.footer {
+  background: #dff1fd;
+  text-align: center;
+  position: relative;
+  padding-top: 56px;
+  @include mq(sp) {
+    padding-top: 13px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: repeat-x url("../img/footer-wave.svg") left bottom;
+    @include mq(sp) {
+      background: repeat-x url("../img/footer-wave.svg") left 20px bottom;
+    }
+  }
+}
+.footer__inner {
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @include mq(sp) {
+    // max-width: 355px;
+    margin-inline: auto;
+    padding-inline: size-calc(10, 40, 375, 767);
+  }
+}
+.footer__contents {
+  // padding: 40px 49px;
+  padding-block: 40px;
+  padding-inline: size-calc(10, 49, 768, 1280);
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  @include mq(sp) {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 20px;
+    padding-inline: size-calc(10, 20, 375, 767);
+    // padding: 32px 10px 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+}
+
+.footer__info {
+  @include mq(pc) {
+    min-width: 477px;
+  }
+}
+
+.footer__logo {
+  img {
+    width: 100%;
+    max-width: 404px;
+    height: auto;
+    aspect-ratio: 404/41;
+    @include mq(sp) {
+      max-width: 309px;
+      aspect-ratio: 309/33;
+    }
+  }
+}
+
+.footer__info--address {
+  margin-top: 10px;
+  @include font(14, 500);
+  @include mq(sp) {
+    margin-top: 13px;
+  }
+}
+.footer__info--address-text {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.footer__info--tel {
+  margin-top: 25px;
+  @include mq(sp) {
+    margin-top: 23px;
+  }
+  .footer__nav & {
+    margin-top: 0;
+  }
+}
+
+.footer__info--tel-number,
+.footer__info--tel-text {
+  color: var(--main);
+  text-align: center;
+}
+.footer__info--tel-number {
+  display: inline-block;
+  @include font(32, 700, null, -0.64);
+  padding-left: 32px;
+  position: relative;
+  .footer__nav & {
+    padding-left: 22px;
+    @include font(20, 700, null, 0);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 28px;
+    height: 28px;
+    background: url(../img/phone.webp) no-repeat center/cover;
+    .footer__nav & {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.footer__info--tel-text {
+  margin-top: 3px;
+  @include font(12, 500, null, null);
+  @include mq(sp) {
+    margin-top: 5px;
+  }
+  .footer__nav & {
+    color: var(--font);
+    @include font(10, 500);
+  }
+}
+.footer__buttons {
+  margin-top: 21px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  @include mq(sp) {
+    gap: 15px;
+  }
+  @media screen and (max-width: 340px) {
+    flex-direction: column;
+  }
+}
+
+.footer__time-schedule {
+  margin-top: 20px;
+  margin-inline: auto;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  @include mq(pc) {
+    width: 477px;
+    // height: 166px;
+  }
+  @include mq(sp) {
+    // widthは320pxまでがチェック対象なのでmax-width指定
+    max-width: 335px;
+    // height: 117px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 335/117;
+  }
+}
+
+.footer__map {
+  margin-inline: auto;
+  @include mq(pc) {
+    width: 100%;
+    max-width: 385px;
+  }
+  @include mq(sp) {
+    width: 100%;
+    max-width: 315px;
+    margin-top: 20px;
+  }
+  iframe {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer__links {
+  margin-top: 43px;
+  @include mq(pc) {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  @media screen and (max-width: 1024px) {
+    // @include mq(sp) {
+    display: block;
+    margin-top: 62px;
+    padding-inline: 10px;
+    max-width: 355px;
+    margin-inline: auto;
+    // }
+  }
+
+  text-align: left;
+  @include font(16, 700);
+  a {
+    @media (hover: hover) {
+      &:hover {
+        .footer__link--item {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+.footer__link--container {
+  @media screen and (max-width: 1024px) {
+    // @include mq(sp) {
+    margin-top: 43px;
+    // }
+  }
+}
+// .footer__link--head {
+// }
+
+.footer__link--body {
+  display: flex;
+  gap: 20px;
+}
+
+// .footer__link--items {
+// }
+
+.footer__link--item {
+  transition: all 0.3s ease;
+}
+
+.footer__link--item-sub {
+  margin-top: 24px;
+  padding-left: 12px;
+  // size,weight,height,spacing
+  @include font(16, 500, null, null);
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 12px;
+    background: url(../img/arrow-right.webp);
+  }
+}
+
+.footer__copy {
+  margin-top: 59px;
+  display: block;
+  background: #1391e6;
+  color: #fff;
+  text-align: center;
+  @include font(14, 500, null, null);
+  padding-top: 16px;
+  padding-bottom: 18px;
+  @include mq(sp) {
+    margin-top: 63px;
+    padding-top: 21px;
+    padding-bottom: 74px;
+  }
+}
+
+.footer__nav {
+  @include mq(pc) {
+    display: none;
+  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  z-index: var(--layer-footer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 4px;
+  @media screen and (max-width: 350px) {
+    flex-direction: column;
+  }
+}
+
+// .footer__nav-info--tel {
+// }
+
+.footer__pagetop {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  z-index: var(--layer-totop);
+
+  svg {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include mq(sp) {
+    right: 16px;
+    bottom: 97px;
+  }
+  @media screen and (max-width: 350px) {
+    bottom: 30px;
+  }
+  .is-scroll & {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  .drawer-open & {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../global" as global;
+
+.p-footer-menu {
+  background: #868686;
+}
+
+.p-footer-menu__inner {
+  padding-bottom: 42px;
+  padding-top: 54px;
+
+  @include global.mq("sp") {
+    padding-bottom: 56px;
+    padding-top: 54px;
+  }
+}
+
+.p-footer__logo {
+  text-align: center;
+}
+
+.p-footer__logo-link {
+  color: #fff;
+  font-family: global.$ff-en;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include global.mq("sp") {
+    font-size: 26px;
+  }
+}
+
+.p-footer__sub {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.71429;
+  margin-top: 4px;
+  text-align: center;
+
+  @include global.mq("sp") {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+}
+
+.p-footer__nav {
+  margin-top: 30px;
+  text-align: center;
+
+  @include global.mq("sp") {
+    margin-top: 28px;
+  }
+}

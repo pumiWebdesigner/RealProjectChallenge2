@@ -1,0 +1,92 @@
+@use "../global" as global;
+
+.p-entry {
+  background: #fff;
+  box-shadow: 0 0 3px 0 rgba(#000, 0.16);
+  padding: 40px 40px 12px;
+
+  @include global.mq("sp") {
+    padding: 10px;
+  }
+}
+
+.p-entry__header {
+}
+
+.p-entry__label {
+}
+
+.p-entry__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.7;
+  margin-top: 18px;
+
+  @include global.mq("sp") {
+    font-size: 24px;
+    line-height: 1.41667;
+  }
+}
+
+.p-entry__date {
+  align-items: center;
+  display: flex;
+  margin-top: 18px;
+}
+
+.p-entry__published,
+.p-entry__updated {
+  color: gray;
+  font-size: 12px;
+
+  @include global.mq("sp") {
+    font-size: 11px;
+  }
+}
+
+.p-entry__published {
+  &::before {
+    content: "\f073";
+    font-family: global.$ff-awesome;
+    font-weight: 400;
+    margin-right: 8px;
+  }
+}
+
+.p-entry__updated {
+  margin-left: 27px;
+
+  @include global.mq("sp") {
+    margin-left: 18px;
+  }
+
+  &::before {
+    content: "\f1da";
+    font-family: global.$ff-awesome;
+    font-weight: 900;
+    margin-right: 8px;
+  }
+}
+
+.p-entry__img {
+  margin-top: 18px;
+  text-align: center;
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
+.p-entry__body {
+  margin-top: 32px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.p-entry__tag {
+  margin-top: 20px;
+}
+
+.p-entry__relative {
+  margin-top: 20px;
+}

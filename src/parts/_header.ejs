@@ -1,0 +1,44 @@
+<!-- prettier-ignore -->
+<%_
+  const menus = [ 
+    { 
+      name:"会社概要" ,
+      path : `${path}/company/index.html` 
+    }, 
+    { 
+      name:"お問い合わせ" ,
+      path : `${path}/contact/index.html` 
+    }, 
+  ]; 
+_%>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<%= path %>/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner inner">
+        <h1 class="header__logo">
+          <a href="<%= path %>/index.html">Logo</a>
+        </h1>
+        <nav class="header__nav">
+          <%_ menus.forEach(menu => { _%>
+          <a class="header__link" href="<%= menu.path %>"><%= menu.name %></a>
+          <%_ }); _%>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

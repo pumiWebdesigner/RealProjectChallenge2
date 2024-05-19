@@ -1,0 +1,43 @@
+@use "../global" as global;
+
+.c-archive-head {
+}
+
+.c-archive__sub {
+  color: global.$main-color;
+  font-family: global.$ff-en;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.c-archive__title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 18px;
+
+  @include global.mq("sp") {
+    font-size: 20px;
+  }
+
+  &::before {
+    color: global.$main-color;
+    content: "\f02d";
+    font-family: global.$ff-awesome;
+    font-size: 26px;
+    font-weight: 900;
+    margin-right: 8px;
+  }
+
+  &.c-archive__title--category {
+    &::before {
+      content: "\f02d";
+    }
+  }
+
+  &.c-archive__title--archive {
+    &::before {
+      content: "\f02d";
+    }
+  }
+}

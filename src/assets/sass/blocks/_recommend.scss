@@ -1,0 +1,111 @@
+@use "sass:map";
+@use "../global" as *;
+
+.recommend {
+  margin-top: 81px;
+  @include mq(tab) {
+    margin-top: 120px;
+    margin-top: 0;
+  }
+  @include mq(sp) {
+    margin-top: 103px;
+  }
+}
+
+.recommend__wrapper {
+  margin-top: 63px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  @include mq(tab) {
+    gap: 30px;
+  }
+  @include mq(sp) {
+    margin-top: 41px;
+    flex-direction: column;
+    align-items: center;
+    gap: 57px;
+  }
+}
+.recommend__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:nth-child(1),
+  &:nth-child(3) {
+    flex: 0 0 281px;
+    width: 281px; // recommend__textの幅を合わせるため
+  }
+  &:nth-child(2) {
+    flex: 0 0 284px;
+    width: 284px; // recommend__textの幅を合わせるため
+  }
+  @include mq(tab) {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      flex: 0 0 230px;
+      width: 230px; // recommend__textの幅を合わせるため
+    }
+  }
+}
+
+.recommend__label {
+}
+
+.recommend__img {
+  margin-top: 15px;
+  @include mq(sp) {
+    margin-top: 11px;
+  }
+}
+
+.recommend__message {
+  margin-top: -21px;
+  width: 276px;
+  padding-top: 11px;
+  padding-bottom: 10px;
+  border-radius: 22px;
+  background: var(--main);
+  color: #fff;
+  @include font(20, 700, null, 1.6);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% - 13px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 26px;
+    background: url(./img/recommend-poligon.svg) no-repeat center/cover;
+  }
+  .recommend__item:nth-child(2) & {
+    margin-left: 3px;
+  }
+  @include mq(tab) {
+    width: 230px;
+    @include font(16, 700, null, 1.6);
+  }
+  @include mq(sp) {
+    margin-left: 3px;
+  }
+}
+
+.recommend__text {
+  margin-top: 34px;
+  // .recommend__item:nth-child(1) &,
+  // .recommend__item:nth-child(3) & {
+  //   width: 281px;
+  // }
+  // .recommend__item:nth-child(2) & {
+  //   width: 284px;
+  // }
+  text-align: left;
+  @include font(14, 500, 24, null);
+}
+.text-accent {
+  color: var(--accent);
+}

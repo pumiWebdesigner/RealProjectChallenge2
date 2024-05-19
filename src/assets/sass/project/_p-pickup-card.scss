@@ -1,0 +1,58 @@
+@use "../global" as global;
+
+.p-pickup-card {
+  display: inline-block;
+  margin-right: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include global.mq("sp") {
+    display: flex;
+  }
+}
+
+.p-pickup-card__img {
+  position: relative;
+  text-align: center;
+
+  @include global.mq("sp") {
+    width: 42.40688%;
+  }
+}
+
+.p-pickup-card__body {
+  padding: 20px 0;
+
+  @include global.mq("sp") {
+    width: 57.59312%;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.p-pickup-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  @include global.mq("sp") {
+    font-size: 16px;
+    padding-left: 15px;
+  }
+}
+
+.p-pickup-card__tag {
+  background: global.$main-color;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.1;
+  padding: 6px 14px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+}

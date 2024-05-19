@@ -1,0 +1,43 @@
+:root {
+  //color
+  --font: #393939;
+  --main: #1391e6;
+  --sub1: #0060a0;
+  --sub2: #dff1fd;
+  --accent: #ee5a6d;
+  --hov-btn: #0060a0;
+
+  // 三角
+  // --clip-triangle-top: polygon(50% 0, 100% 100%, 0 100%);
+  // --clip-triangle-bottom: polygon(0 0, 100% 0, 50% 100%);
+  // --clip-triangle-right: polygon(0 0, 100% 50%, 0 100%);
+  // --clip-triangle-left: polygon(0 50%, 100% 0, 100% 100%);
+  // --clip-triangle-lower-left: polygon(0 0, 100% 100%, 0 100%);
+  // --clip-triangle-upper-left: polygon(0 0, 100% 0, 0 100%);
+  // --clip-triangle-lower-right: polygon(100% 0, 100% 100%, 0 100%);
+  // --clip-triangle-upper-right: polygon(0 0, 100% 0, 100% 100%);
+
+  // 階層
+  --layer-hamburger: 150;
+  --layer-drawer: 40;
+  --layer-totop: 100;
+  --layer-aside: 30;
+  --layer-header: 20;
+  --layer-footer: 50;
+  --layer-default: 1;
+  --layer-background: -1;
+
+  // width
+  --width-pc-comp: 1440;
+  --width-tab-comp: 768;
+  --width-sp-comp: 375;
+
+  // height
+  --height-pc-header: 80px;
+  --height-sp-header: 60px;
+
+  // padding
+  --padding-pc-comp: 130;
+  --padding-tab-comp: 60;
+  --padding-sp-comp: 16;
+}

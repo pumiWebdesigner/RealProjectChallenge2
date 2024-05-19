@@ -1,0 +1,62 @@
+@use "../global" as global;
+
+.p-global-nav {
+  background: #fff;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.p-global-nav__inner {
+  padding-top: 34px;
+  padding-bottom: 24px;
+}
+
+.p-global-nav__lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p-global-nav__list {
+  &:nth-child(n + 2) {
+    margin-left: 40px;
+  }
+}
+
+.p-global-nav__link {
+  display: block;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &::before {
+    content: "\f015";
+    font-family: global.$ff-awesome;
+    font-weight: 900;
+    margin-right: 8px;
+  }
+
+  &.p-global-nav__link--icon-home::before {
+    content: "\f015";
+  }
+
+  &.p-global-nav__link--icon-book::before {
+    content: "\f02d";
+  }
+
+  &.p-global-nav__link--icon-cup::before {
+    content: "\f0f4";
+  }
+
+  &.p-global-nav__link--icon-pc::before {
+    content: "\f109";
+  }
+
+  &.p-global-nav__link--icon-mail::before {
+    content: "\f0e0";
+  }
+}

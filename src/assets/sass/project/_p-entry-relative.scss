@@ -1,0 +1,47 @@
+@use "../global" as global;
+
+.p-entry-relative {
+}
+
+.p-entry-relative__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.p-entry-relative__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-entry-relative__item {
+  width: calc(25% - 18px * 3 / 4);
+
+  &:not(:nth-child(4n + 1)) {
+    margin-left: 18px;
+
+    @include global.mq("sp") {
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(n + 5) {
+    margin-top: 21px;
+
+    @include global.mq("sp") {
+      margin-top: 0;
+    }
+  }
+
+  @include global.mq("sp") {
+    width: calc(50% - 30px * 1 / 2);
+
+    &:not(:nth-child(2n + 1)) {
+      margin-left: 20px;
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: 21px;
+    }
+  }
+}

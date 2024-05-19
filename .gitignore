@@ -1,0 +1,12 @@
+# 除外するディレクトリ
+package-lock.json
+node_modules
+.DS_Store
+# dist/
+
+# # 除外するファイルパターン
+# *.log
+# *.temp
+
+# # 特定のファイルを除外
+# config/secret-config.yaml

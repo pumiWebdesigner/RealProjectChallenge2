@@ -1,0 +1,49 @@
+@use "../global" as global;
+
+.p-search-form {
+  position: relative;
+}
+
+.p-search-form__field {
+  padding-right: 70px;
+  width: 100%;
+  background-image: none;
+  border: 1px solid #e2e2e2;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 20px 24px;
+
+  &::-webkit-input-placeholder {
+    color: #e2e2e2;
+  }
+
+  &::-moz-placeholder {
+    color: #e2e2e2;
+  }
+
+  &:-ms-input-placeholder {
+    color: #e2e2e2;
+  }
+
+  &::-ms-input-placeholder {
+    color: #e2e2e2;
+  }
+
+  &::placeholder {
+    color: #e2e2e2;
+  }
+}
+
+.p-search-form__submit {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  color: #e2e2e2;
+  font-size: 26px;
+  padding: 0;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}

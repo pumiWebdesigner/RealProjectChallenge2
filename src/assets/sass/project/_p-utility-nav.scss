@@ -1,0 +1,50 @@
+@use "../global" as global;
+
+.p-utility-nav {
+  text-align: center;
+}
+
+.p-utility-nav__lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include global.mq("sp") {
+    display: block;
+    text-align: center;
+  }
+}
+
+.p-utility-nav__list {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 32px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-decoration: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include global.mq("sp") {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+
+    &:nth-child(n + 2) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.p-utility-nav__link {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

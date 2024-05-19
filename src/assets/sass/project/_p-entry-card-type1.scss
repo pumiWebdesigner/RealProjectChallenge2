@@ -1,0 +1,99 @@
+@use "../global" as global;
+
+.p-entry-card-type1 {
+  display: flex;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 16%);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include global.mq("sp") {
+    padding: 10px;
+  }
+}
+
+.p-entry-card-type1__img {
+  width: 36.02941%;
+
+  @include global.mq("sp") {
+    width: 45.06173%;
+  }
+
+  img {
+  }
+}
+
+.p-entry-card-type1__body {
+  padding: 0 0 0 20px;
+  width: 63.97059%;
+
+  @include global.mq("sp") {
+    padding-left: 12px;
+    width: 54.93827%;
+  }
+}
+
+.p-entry-card-type1__meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.p-entry-card-type1__tag {
+  background: global.$main-color;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  margin-right: 15px;
+  padding: 3px 12px 2px;
+
+  @include global.mq("sp") {
+    font-size: 10px;
+    margin-right: 8px;
+  }
+}
+
+.p-entry-card-type1__published {
+  color: gray;
+  font-size: 12px;
+  margin-top: 4px;
+
+  &::before {
+    content: "\f073";
+    font-family: global.$ff-awesome;
+    font-weight: 400;
+    margin-right: 4px;
+  }
+
+  @include global.mq("sp") {
+    font-size: 10px;
+  }
+}
+
+.p-entry-card-type1__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.42;
+  margin-bottom: 14px;
+
+  @include global.mq("sp") {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+}
+
+.p-entry-card-type1__excerpt {
+  color: #454545;
+  font-size: 14px;
+  line-height: 1.71429;
+
+  @include global.mq("sp") {
+    display: none;
+  }
+}

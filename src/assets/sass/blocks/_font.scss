@@ -1,0 +1,11 @@
+@use "../global" as *;
+@use "sass:map";
+
+@font-face {
+  font-family: "001Shirokuma Regular";
+  src: url(../../font/001Shirokuma-Regular.otf);
+}
+@font-face {
+  font-family: "HanziPen SC Regular";
+  src: url(../../font/hanzipen-sc-regular.otf);
+}

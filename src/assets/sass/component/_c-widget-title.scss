@@ -1,0 +1,8 @@
+@use "../global" as global;
+
+.c-widget-title {
+  background: url(../img/heading-line.png) repeat-x bottom center/340px auto;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 0 16px;
+}

@@ -1,0 +1,191 @@
+@use "sass:map";
+@use "../global" as *;
+
+.blog {
+  margin-top: 260px;
+  padding-bottom: 191px;
+  @include mq(sp) {
+    margin-top: 132px;
+    padding-bottom: 132px;
+  }
+}
+
+.blog__wrapper {
+  margin-top: 84px;
+  @include mq(sp) {
+    margin-top: 50px;
+    padding-inline: 20px;
+  }
+}
+
+.blog__list {
+  display: flex;
+  justify-content: center;
+  gap: 60px 50px;
+  flex-wrap: wrap;
+  @include mq(sp) {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.blog__item {
+  max-width: 300px;
+  position: relative;
+  &.is-new {
+    &::before {
+      content: "NEW";
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: #ee5a6d;
+      color: #fff;
+      @include font(16, 700, null, null);
+      text-align: center;
+      border-radius: 50%;
+      z-index: 1;
+      line-height: 60px;
+      @include mq(sp) {
+        top: -8px;
+        left: -8px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 10px;
+      }
+    }
+  }
+  @include mq(sp) {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.blog__link {
+  @include mq(sp) {
+    display: flex;
+  }
+  @media (hover: hover) {
+    &:hover {
+      .blog__img {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .blog__title {
+        color: var(--main);
+      }
+    }
+  }
+}
+
+.blog__img {
+  overflow: hidden;
+  border-radius: 20px 20px 0px 0px;
+
+  position: relative;
+  img {
+    border-radius: 20px 20px 0px 0px;
+    aspect-ratio: 300/188;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    // hover時アクションは、.blog__linkに記述
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: lightgray 50% / cover no-repeat;
+    border-radius: 20px 20px 0px 0px;
+    z-index: -1;
+  }
+  @include mq(sp) {
+    border-radius: revert;
+    width: calc(133 / 335 * 100%);
+    img {
+      aspect-ratio: calc(133 / 101);
+      border-radius: 0px;
+    }
+  }
+}
+
+.blog__text {
+  border-radius: 0px 0px 20px 20px;
+  padding: 23px 24px 14px;
+  background: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  text-align: left;
+  position: relative;
+  @include mq(sp) {
+    flex: 1;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 30px 10px 8px;
+  }
+  &.is-other {
+    &::before {
+      content: "その他";
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      display: inline-block;
+      @include font(11, 500, null, null);
+      padding: 8px 12px 7px;
+      border-radius: 14px;
+      background: #1391e6;
+      color: #fff;
+      @include mq(sp) {
+        content: "お知らせ";
+        top: 5px;
+        left: 11px;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.blog__title {
+  @include font(16, 500, 24, null);
+  transition: all 0.3s ease;
+  // hover時アクションは、.blog__linkに記述
+
+  @include mq(sp) {
+    @include font(14, 500, 20, null);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+
+.blog__data {
+  color: #888;
+  display: inline-block;
+  margin-top: 5px;
+  @include font(11, 500, null, null);
+  @include mq(sp) {
+    margin-top: 8px;
+  }
+}
+
+.blog__button {
+  margin-top: 60px;
+  @include font(14, 500, null, null);
+  @include mq(sp) {
+    margin-top: 40px;
+    .button--arrow-right {
+      padding: 0.75em 2.75em;
+    }
+  }
+}

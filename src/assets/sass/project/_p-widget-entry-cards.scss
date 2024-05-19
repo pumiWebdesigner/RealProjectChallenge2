@@ -1,0 +1,34 @@
+@use "../global" as global;
+
+.p-widget-entry-cards {
+}
+
+.p-widget-entry-cards__item {
+  position: relative;
+
+  &.p-widget-entry-cards__item--has-number {
+    counter-increment: number;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: counter(number);
+      background: global.$accent-color;
+      color: #fff;
+      font-family: global.$ff-en;
+      font-size: 12px;
+      height: 20px;
+      left: 0;
+      line-height: 20px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 20px;
+    }
+  }
+
+  &:nth-child(n + 2) {
+    margin-top: 20px;
+  }
+}

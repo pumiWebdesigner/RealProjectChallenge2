@@ -1,0 +1,45 @@
+@use "../global" as global;
+
+.p-breadcrumb {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.p-breadcrumb__item {
+  color: #8d8d8d;
+  font-size: 12px;
+
+  &:not(:last-child) {
+    &::after {
+      content: "\f105";
+      font-family: global.$ff-awesome;
+      font-weight: 900;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.p-breadcrumb__link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &.p-breadcrumb__link--home {
+    &::before {
+      content: "\f015";
+      font-family: global.$ff-awesome;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+  }
+}
+
+.p-breadcrumb__text {
+}

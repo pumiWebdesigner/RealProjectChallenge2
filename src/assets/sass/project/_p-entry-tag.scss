@@ -1,0 +1,44 @@
+@use "../global" as global;
+
+.p-entry-tag {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-entry-tag__head {
+  background: gray;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 15px 5px 0;
+  padding: 6px 15px 0;
+
+  &::before {
+    content: "\f02b";
+    font-family: global.$ff-awesome;
+    font-weight: 900;
+    margin-right: 5px;
+  }
+}
+
+.p-entry-tag__item {
+  margin: 5px 15px 5px 0;
+
+  a {
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    color: gray;
+    display: block;
+    font-size: 14px;
+    padding: 6px 18px 5px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background: gray;
+      border-color: gray;
+      color: #fff;
+    }
+  }
+}

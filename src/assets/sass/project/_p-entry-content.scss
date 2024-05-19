@@ -1,0 +1,50 @@
+@use "../global" as global;
+
+// 目次
+.p-entry-content {
+}
+
+.p-entry-content__text {
+  line-height: 1.875;
+  margin-top: 30px;
+}
+
+.p-entry-content__toc {
+  margin-top: 64px;
+}
+
+.p-entry-content__h2 {
+  margin-bottom: 38px;
+  margin-top: 80px;
+}
+
+.p-entry-content__h3 {
+  margin-bottom: 24px;
+  margin-top: 84px;
+}
+
+.p-entry-content__h4 {
+  margin-bottom: 16px;
+  margin-top: 82px;
+}
+
+.p-entry-content__button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.p-entry-content__link {
+  color: global.$link-color;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.p-entry-content__strong {
+  font-weight: 700;
+}

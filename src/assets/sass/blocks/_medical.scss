@@ -1,0 +1,255 @@
+@use "sass:map";
+@use "../global" as *;
+
+.medical {
+  margin-top: 338px;
+  padding-bottom: 82px;
+  background-color: var(--sub2);
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  &::before {
+    aspect-ratio: calc(1280 / 203);
+    bottom: 100%;
+    background: url(../img/medical__bg--top-pc.webp) no-repeat top center/cover;
+    @include mq(sp) {
+      aspect-ratio: calc(375 / 88);
+      background: url(../img/medical__bg--top-sp.webp) no-repeat top center/cover;
+    }
+  }
+
+  &::after {
+    aspect-ratio: calc(1280 / 97);
+    top: 100%;
+    background: url(../img/medical__bg--bottom-pc.webp) no-repeat bottom center/cover;
+    @include mq(sp) {
+      aspect-ratio: calc(375 / 28);
+      background: url(../img/medical__bg--bottom-sp.webp) no-repeat bottom center/cover;
+    }
+  }
+  @include mq(sp) {
+    margin-top: 186px;
+    padding-bottom: 62px;
+  }
+}
+.medical__body {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: auto;
+    z-index: 10;
+  }
+  &::before {
+    left: 40px;
+    bottom: -81px;
+    aspect-ratio: 57/56;
+    width: calc(57 / 1280 * 100%);
+    background: url(./img/deco-kirakira-single.webp) no-repeat center/cover;
+  }
+  &::after {
+    right: 21px;
+    bottom: -103px;
+    aspect-ratio: calc(125 / 138);
+    width: calc(125 / 1280 * 100%);
+    background: url(./img/deco-kirakira-double.webp) no-repeat center/cover;
+  }
+  @include mq(sp) {
+    &::before {
+      left: 12px;
+      bottom: -50px;
+      aspect-ratio: calc(24 / 25);
+      width: calc(24 / 375 * 100%);
+    }
+    &::after {
+      right: 7px;
+      bottom: -69px;
+      aspect-ratio: calc(56 / 60);
+      width: calc(56 / 375 * 100%);
+    }
+  }
+}
+.medical__inner {
+  max-width: 1000px;
+  margin-inline: auto;
+  @include mq(tab) {
+    padding-inline: 40px;
+  }
+  @include mq(sp) {
+    padding-inline: 20px;
+  }
+}
+.medical__title {
+  margin-top: 3px;
+  @include mq(sp) {
+    margin-top: 32px;
+  }
+}
+.medical__wrapper {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  margin-top: 64px;
+  padding-bottom: 60px;
+
+  @include mq(tab) {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    padding-bottom: 40px;
+  }
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 42px;
+    padding-bottom: 20px;
+  }
+}
+
+.medical__item {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 290px;
+  @include mq(sp) {
+    max-width: 335px;
+    height: 210px;
+  }
+  @media screen and (max-width: 340px) {
+    max-width: 300px;
+    height: 188px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .medical__img {
+        &::before {
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 20px;
+        }
+        &::after {
+          opacity: 1;
+        }
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.medical__img {
+  width: inherit;
+  height: inherit;
+  position: relative;
+
+  border-radius: 20px;
+  overflow: hidden;
+  img {
+    aspect-ratio: 460/290;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    @include mq(sp) {
+      aspect-ratio: 335/210;
+    }
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    aspect-ratio: 460/290;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 0.3s ease;
+    // hover時アクションは、.medical__itemに記述
+  }
+  &::before {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    // hover時アクションは、.medical__itemに記述
+  }
+  &::after {
+    width: calc(294 / 308 * 100%);
+    height: calc(180 / 192 * 100%);
+    border: 2px solid #fff;
+    opacity: 0;
+    // hover時アクションは、.medical__itemに記述
+  }
+}
+
+.medical__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 6px;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+  z-index: 1;
+}
+
+.medical__text--title {
+  @include font(28, 700, null, 2.24);
+
+  padding-bottom: 26px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: #fff;
+  }
+  @include mq(sp) {
+    @include font(20, 700, null, 1.6);
+    &::after {
+      width: 30px;
+    }
+  }
+}
+
+.medical__text--text {
+  @include font(16, 700, 28, 1.28);
+  @include mq(sp) {
+    @include font(12, 700, 19, 0.96);
+  }
+}
+
+.medical__message {
+  background: #fff;
+  padding: 36px 40px;
+  text-align: left;
+  @include font(14, 500, 28, null);
+  @include mq(sp) {
+    @include font(14, 500, 24, null);
+
+    padding: 18px 20px;
+  }
+}

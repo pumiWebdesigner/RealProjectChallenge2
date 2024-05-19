@@ -1,0 +1,34 @@
+@use "../global" as global;
+
+.p-footer {
+  background: #464646;
+}
+
+.p-footer__inner {
+  padding-bottom: 20px;
+  padding-top: 18px;
+}
+
+.p-footer__copy {
+  color: #fff;
+  font-family: global.$ff-en;
+  font-size: 12px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.p-footer__by {
+  color: #fff;
+  font-family: global.$ff-en;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

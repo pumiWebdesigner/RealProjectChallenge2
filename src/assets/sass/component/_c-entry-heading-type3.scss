@@ -1,0 +1,20 @@
+@use "../global" as global;
+
+.c-entry-heading-type3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding-left: 42px;
+  position: relative;
+
+  &::after {
+    color: global.$main-color;
+    content: "\f00c";
+    font-family: global.$ff-awesome;
+    font-size: 26px;
+    font-weight: 900;
+    left: 0;
+    position: absolute;
+    top: -8px;
+  }
+}

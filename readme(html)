@@ -1,0 +1,35 @@
+□ガルプ準備
+・ホームディレクトリに、以下を格納
+　package.json
+　gulpfile.js
+
+□build処理
+・ターミナルで以下を実行
+　npm installを実行
+・srcフォルダを作成し、以下を格納
+　html
+　sass
+　js
+　img
+・gulp.jsの各出力先を以下に設定
+　dest("./public/assets/css")
+・ターミナルで以下を実行
+　npm gulp build
+
+□watch処理
+・gulp.jsのbrowserSync.initを以下に設定
+  server: {
+      baseDir: "./public/",
+    },
+・ターミナルで以下を実行
+　npm gulp watch
+
+
+下層ページのパスはドメイン配下からのパスで記述できる（サーバにアップロードしている場合）
+（変更前）path : "./company/index.html" 
+（変更後）path : "/company/index.html" 
+
+もしくは、パスを変数化してページごとに設定する
+（変更前）path : "./company/index.html"
+（変更後）path : `${path}/contact/index.html` 
+                 index.html側で、"."もしくは".."を記述

@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "../global" as *;
+
+.aside__button {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+  position: fixed;
+  right: 0;
+  top: 176px;
+  width: 92px;
+  z-index: var(--layer-aside);
+  background: var(--main);
+  color: #fff;
+  border-radius: 20px 0px 0px 20px;
+  padding: 20px 16px 21px;
+  @include font(14, 700, 18.2, null);
+  transition: background 0.3s;
+  &:hover {
+    background: #0060a0;
+  }
+}
+
+.aside__button--label {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-content: center;
+}

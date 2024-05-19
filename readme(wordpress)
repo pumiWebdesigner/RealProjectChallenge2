@@ -1,0 +1,32 @@
+□ガルプ準備
+・devフォルダを作成し、そこに、以下を格納
+　package.json
+　gulpfile.js
+・ターミナルで以下を実行
+　cd dev
+　npm installを実行
+
+□build処理
+・srcフォルダを作成し、以下を格納
+　sass
+　js
+　img
+　　※PHPファイルはホームディレクトリに配置
+・gulp.jsの各出力先を以下に設定
+　dest("../css")
+　　./public/assets → ../　に置換する
+・ターミナルで以下を実行
+　npm gulp build
+
+□watch処理
+・gulp.jsのwatchを以下に設定
+  gulp.watch("../**/*.php", browserReload);
+・gulp.jsのbrowserSync.initを以下に設定
+　proxy: "http://localhost:8888/dev/",
+・ターミナルで以下を実行
+　npm gulo watch
+
+
+下層ページのパスはドメイン配下からのパスで記述できる（サーバにアップロードしている場合）
+（変更前）path : "./company/index.html" 
+（変更後）path : "/company/index.html" 

@@ -1,0 +1,104 @@
+@use "sass:map";
+@use "../global" as *;
+
+.concept {
+  margin-top: 60px;
+  padding-top: 60px;
+  background: #fff url(./img/concept-bg.webp) no-repeat top left 10px;
+  background-size: calc(554 / 375 * 100%); /* sizeはショートハンドでかけない */
+  padding-bottom: size-calc(150, 120, 1024, 1280);
+
+  @include mq(pc) {
+    margin-top: 96px;
+    padding-top: 180px;
+    background: #fff url(./img/concept-bg.webp) no-repeat top left 416px;
+  }
+  @include mq(sp) {
+    padding-bottom: 0;
+  }
+  @media screen and (min-width: 1500px) {
+    margin-top: 150px;
+  }
+}
+
+.concept__inner {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.concept__container {
+  @include mq(pc) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.concept__contents {
+  margin-top: 52px;
+  padding-right: 20px;
+  padding-left: 20px;
+  @include mq(pc) {
+    width: calc((95 + 407 + 138) / 1280 * 100%);
+    margin-top: 37px;
+    padding-left: calc(95 / 1280 * 100%);
+    // padding-right: calc(138 / 1280 * 100%);
+  }
+  // @media screen and (max-width: 1200px) {
+  //   padding-right: calc(95 / 1280 * 100%);
+  // }
+}
+.concept__title {
+  color: var(--main);
+  @include font(11, 700, null, 1.1);
+  @include mq(pc) {
+    @include font(14, 700, null, 1.4);
+  }
+}
+.concept__message--main {
+  margin-top: 17px;
+  @include font(20, 700, 32, 1.6);
+  white-space: nowrap;
+  @include mq(pc) {
+    margin-top: 27px;
+    @include font(28, 700, 44, 2.24);
+  }
+}
+
+.concept__message--sub {
+  @include font(14, 500, 24, null);
+  margin-top: 27px;
+  @include mq(pc) {
+    margin-top: 36px;
+    width: 407px;
+  }
+}
+
+.cencept__button {
+  margin-top: 36px;
+  text-align: center;
+  padding-left: 1px;
+  @include font(14, 500, null, null);
+  @include mq(pc) {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
+.concept__img {
+  margin-top: 40px;
+  width: calc(334 / 375 * 100%);
+  img {
+    aspect-ratio: 334/230;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0px 20px 20px 0px;
+  }
+  @include mq(pc) {
+    margin-top: 0;
+    width: calc(640 / 1280 * 100%);
+    img {
+      aspect-ratio: 640/438;
+    }
+  }
+}

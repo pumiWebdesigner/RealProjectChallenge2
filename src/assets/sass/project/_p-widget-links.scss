@@ -1,0 +1,26 @@
+@use "../global" as global;
+
+.c-widget-link {
+  border-bottom: 1px solid #e2e2e2;
+  display: block;
+  font-size: 14px;
+  padding: 20px 20px 14px 0;
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    color: inherit;
+    content: "\f054";
+    font-family: global.$ff-awesome;
+    font-size: 16px;
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

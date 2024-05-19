@@ -1,0 +1,26 @@
+@use "../global" as global;
+
+body {
+  color: global.$text-color;
+  font-family: global.$ff-base;
+  font-size: global.$fz-base;
+  font-weight: global.$fw-base;
+  line-height: global.$lh-base;
+
+	&.is-footer-sns-fixed {
+		padding-bottom: 75px;
+
+    @include global.mq("sp") {
+      padding-bottom: 67px;
+    }
+	}
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}

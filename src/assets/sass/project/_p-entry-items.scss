@@ -1,0 +1,36 @@
+@use "../global" as global;
+
+.p-entry-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-entry-items__card {
+  width: calc(50% - 40px / 2);
+
+  @include global.mq("sp") {
+    width: 100%;
+  }
+
+  &:nth-child(2n) {
+    margin-left: 40px;
+
+    @include global.mq("sp") {
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(n + 3) {
+    margin-top: 50px;
+
+    @include global.mq("sp") {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(n + 2) {
+    @include global.mq("sp") {
+      margin-top: 27px;
+    }
+  }
+}

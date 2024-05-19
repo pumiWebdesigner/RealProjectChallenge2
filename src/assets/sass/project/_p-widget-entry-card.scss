@@ -1,0 +1,27 @@
+@use "../global" as global;
+
+.p-widget-entry-card {
+  display: flex;
+  text-decoration: none;
+  transition: opacity 0.3s ease 0s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.p-widget-entry-card__image {
+  width: 120px;
+  position: relative;
+
+  img {
+  }
+}
+
+.p-widget-entry-card__title {
+  width: calc(100% - 120px - 10px);
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57143;
+}
