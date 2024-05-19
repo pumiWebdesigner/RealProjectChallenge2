@@ -1,21 +1,13 @@
-@use "../global" as global;
+@use "../global" as *;
 
 body {
-  color: global.$text-color;
-  font-family: global.$ff-base;
-  font-size: global.$fz-base;
-  font-weight: global.$fw-base;
-  line-height: global.$lh-base;
-
-	&.is-footer-sns-fixed {
-		padding-bottom: 75px;
-
-    @include global.mq("sp") {
-      padding-bottom: 67px;
-    }
-	}
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  color: var(--font);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -23,4 +15,14 @@ img {
 
 a {
   color: inherit;
+}
+
+.mask {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: gray;
+}
+.accent {
+  color: var(--accent);
 }

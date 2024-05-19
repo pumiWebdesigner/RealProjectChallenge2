@@ -1,4 +1,4 @@
-@use "../global" as global;
+@use "../global" as *;
 
 .l-archive-main {
 }
@@ -10,9 +10,9 @@
 .l-archive-main__head {
   margin-bottom: 70px;
   padding-top: 28px;
-  border-top: 3px solid global.$main-color;
+  border-top: 3px solid $main-color;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     margin-bottom: 35px;
   }
 }
@@ -24,7 +24,7 @@
   &:nth-child(n + 2) {
     margin-top: 30px;
 
-    @include global.mq("sp") {
+    @include mq("sp") {
       margin-top: 20px;
     }
   }
@@ -34,7 +34,7 @@
   margin-top: 62px;
   text-align: center;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     margin-top: 40px;
   }
 }

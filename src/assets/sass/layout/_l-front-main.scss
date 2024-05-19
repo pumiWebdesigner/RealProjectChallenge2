@@ -1,4 +1,4 @@
-@use "../global" as global;
+@use "../global" as *;
 
 .l-front-main {
 }
@@ -10,7 +10,7 @@
   margin-top: 64px;
   text-align: center;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     margin-top: 24px;
   }
 }

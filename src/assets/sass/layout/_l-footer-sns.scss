@@ -1,11 +1,11 @@
 @use "sass:map";
-@use "../global" as global;
+@use "../global" as *;
 
 .l-footer-sns {
   bottom: -75px;
   left: 0;
   position: fixed;
-  z-index: map.get(global.$layer, floating);
+  z-index: map.get($layer, floating);
 
   .is-footer-sns-fixed & {
     bottom: 0;

@@ -1,0 +1,10 @@
+□node_modules構築
+・ターミナルで以下を実行
+　npm install --save-dev
+
+・初期ファイル構築
+　npm run build
+
+・監視＆自動更新開始
+　npm run dev
+

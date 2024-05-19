@@ -41,3 +41,49 @@
   --padding-tab-comp: 60;
   --padding-sp-comp: 16;
 }
+
+// 色
+$main-color: #d81f32; // メインカラー
+$accent-color: #01b3a7; // アクセントカラー
+$accent-color-active: #00aca0; // アクセントカラー（アクティブ）
+$text-color: #333; // テキストカラー
+$link-color: #1592e6; // リンクカラー
+
+// フォント
+$ff-awesome: "Font Awesome 5 Free", sans-serif; // Font Awesome
+$ff-en: "Lato", sans-serif; // 英字
+$ff-base: "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; // 日本語標準
+$fz-base: 16px; // ベースフォントサイズ
+$fw-base: 500; // ベースフォントウェイト
+$lh-base: 1.6; // ベース行間
+
+// レイアウト
+$inner-width: 1100px; // インナー幅サイズ
+$sp-width: 768px; // スマホサイズ
+
+// ブレークポイント
+// $breakpoints: (
+//   // スマホ以下の場合
+//   "sp": "screen and (max-width: #{$sp-width - 1px})",
+//   // タブレット以下の場合
+//   "tab": "screen and (max-width: #{$inner-width - 1px})",
+//   // タブレット以上の場合
+//   "pc": "screen and (min-width: #{$inner-width})"
+// );
+
+// 重なり順の定義
+$layer: (
+  // ローディング
+  loading: 300,
+  // モーダル
+  modal: 100,
+  // ドロワー
+  drawer: 40,
+  // フローティング
+  floating: 30,
+  // ヘッダー
+  header: 20,
+  // フッター
+  footer: 10,
+  default: 1
+);

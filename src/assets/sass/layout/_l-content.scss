@@ -1,11 +1,11 @@
 @use "sass:math";
-@use "../global" as global;
+@use "../global" as *;
 
 .l-content {
   padding-top: 60px;
   padding-bottom: 120px;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     padding-top: 40px;
     padding-bottom: 60px;
   }
@@ -17,18 +17,18 @@
 }
 
 .l-content__main {
-  width: math.div(723px, global.$inner-width) * 100%;
+  width: math.div(723px, $inner-width) * 100%;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     width: 100%;
   }
 }
 
 .l-content__side {
   margin-left: auto;
-  width: math.div(341px, global.$inner-width) * 100%;
+  width: math.div(341px, $inner-width) * 100%;
 
-  @include global.mq("sp") {
+  @include mq("sp") {
     width: 100%;
     margin-left: 0;
     margin-top: 70px;
