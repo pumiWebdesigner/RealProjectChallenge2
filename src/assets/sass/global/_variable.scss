@@ -1,11 +1,13 @@
 :root {
   //color
-  --font: #393939;
-  --main: #1391e6;
-  --sub1: #0060a0;
-  --sub2: #dff1fd;
-  --accent: #ee5a6d;
-  --hov-btn: #0060a0;
+  --White: #fff;
+  --gray: #333333;
+  --lightgray: #6c6e6f;
+  --Blue: #f4fbfd;
+  --accent: #ff8b71;
+  --accent-Blue: #82bfed;
+  --accent-green: #c6ecec;
+  --gradation: linear-gradient(177deg, #50bfcb -29.45%, rgba(80, 191, 203, 0.42) 127.88%);
 
   // 三角
   // --clip-triangle-top: polygon(50% 0, 100% 100%, 0 100%);
@@ -30,10 +32,10 @@
   // width
   --width-pc-comp: 1440;
   --width-tab-comp: 768;
-  --width-sp-comp: 375;
+  --width-sp-comp: 390;
 
   // height
-  --height-pc-header: 80px;
+  --height-pc-header: 104px;
   --height-sp-header: 60px;
 
   // padding

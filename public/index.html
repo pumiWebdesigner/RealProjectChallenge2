@@ -1,36 +1,146 @@
 <!-- prettier-ignore -->
 <!-- prettier-ignore -->
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<!-- nodndexの記載 -->
+	<meta name="robots" content="noindex" />
+	<!-- twitterｶｰﾄﾞ,OGP -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@pumiWebcoder" />
+	<meta property="og:url" content="https://pumiwebcoder.xsrv.jp/RPC2/index.html" />
+	<meta property="og:title" content="SUISOPOT｜健康と美しさは、自宅で作る時代" />
+	<meta property="og:description" content="SUISOPOTで、健康と美しさを。自宅で手軽にナノバブル水素水のある生活を始めてみませんか。初期手数料5,000円が無料になるキャンペン実施中！" />
+	<meta property="og:image" content="./img/OGP.webp" />
+	<!-- <link rel="icon" href="./img/favicon.webp" type="image/png" /> -->
 
-	<title>DEMOサイト</title>
-	<meta name="description" content="トップページのディスクリプション" />
+	<!-- title,description -->
+	<title>SUISOPOT｜健康と美しさは、自宅で作る時代</title>
+	<meta name="description" content="SUISOPOTで、健康と美しさを。自宅で手軽にナノバブル水素水のある生活を始めてみませんか。初期手数料5,000円が無料になるキャンペン実施中！" />
 	<!-- Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Yomogi&display=swap" rel="stylesheet" />
 
-	<!-- CSS -->
+	<!-- jQuery読み込み -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" defer></script>
+	<!-- swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<script src="./assets/js/slider.js" defer></script>
+	<script src="./assets/js/swiper.js" defer></script>
+	<!-- wow -->
+	<link rel="stylesheet" href="./css/animate.css" />
+	<!-- wow.jsはwow().initより先に実行する必要があるので、deferを外す -->
+	<script src="./assets/js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!-- css読み込み -->
 	<link rel="stylesheet" href="./assets/css/style.css" />
+
+	<!-- JavaScript読み込み -->
+	<script src="./assets/js/contact.js" defer></script>
+	<script src="./assets/js/script.js" defer></script>
 </head>
 
-<body>
-	<header class="header">
-		<div class="header__inner inner">
-			<h1 class=".p-header__logo">
+<body class="drawer-open">
+	<header class="p-header">
+		<div class="p-header__inner">
+			<h1 class="p-header__logo">
 				<!-- <a href="./index.html">Logo</a> -->
 				<a class="p-header__logo-link" href="./index.html">
-					<img src="../assets/img/kenkyu-img1.webp" alt="" width="180" height="180" />
+					<img src="../assets/img/header-icon.webp" alt="" />
 				</a>
 			</h1>
-			<nav class="header__nav">
-				<a class="header__link" href="./company/index.html">会社概要</a>
-				<a class="header__link" href="./contact/index.html">お問い合わせ</a>
-			</nav>
+			<div class="p-header__logo--contents">
+				<nav class="p-header__nav">
+					<div class="p-header__nav--item">
+						<a class="p-header__link" href="./#">特長</a>
+					</div>
+					<div class="p-header__nav--item">
+						<a class="p-header__link" href="./#">お客様の声</a>
+					</div>
+					<div class="p-header__nav--item">
+						<a class="p-header__link" href="./#">ご利用料金</a>
+					</div>
+					<div class="p-header__nav--item">
+						<a class="p-header__link" href="./#">ご利用までの流れ</a>
+					</div>
+					<div class="p-header__nav--item">
+						<a class="p-header__link" href="./#">よくある質問</a>
+					</div>
+				</nav>
+				<div class="p-header__access">
+					<div class="p-header__access--tel">
+						<img class="p-header__access--tel-icon" src="../assets/img/header-tel.svg" alt="" />
+						<div class="p-header__access--tel-number">03-1234-5678</div>
+					</div>
+					<div class="p-header__access--info">平日受付 9:00-17:00(祝日を除く)</div>
+				</div>
+				<div class="p-header__btns">
+					<div class="p-header__btn">
+						<a href="./#" class="c-header__btn c-header__btn--request"> 資料請求 </a>
+					</div>
+					<div class="p-header__btn">
+						<a href="./#" class="c-header__btn c-header__btn--new"> 新規お申込 </a>
+					</div>
+					<button class="c-header__hamburger--button" id="js-drawer__btn" aria-label="ハンバーガーメニュー">
+						<span class="drawer-bar"></span>
+						<span class="drawer-bar"></span>
+						<span class="drawer-bar"></span>
+					</button>
+				</div>
+
+				<nav class="p-header__nav-drawer">
+					<div class="p-header__nav-drawer--inner">
+						<div class="p-header__nav-drawer--item">
+							<a class="p-header__nav-drawer--link" href="./#">
+								<div class="p-header__nav-drawer--text">特長</div>
+								<div class="p-header__nav-drawer--icon-arrow">
+									<img src="../assets/img/drawer-arrow.svg" alt="" />
+								</div>
+							</a>
+						</div>
+						<div class="p-header__nav-drawer--item">
+							<a class="p-header__nav-drawer--link" href="./#">
+								<div class="p-header__nav-drawer--text">お客様の声</div>
+								<div class="p-header__nav-drawer--icon-arrow">
+									<img src="../assets/img/drawer-arrow.svg" alt="" />
+								</div>
+							</a>
+						</div>
+						<div class="p-header__nav-drawer--item">
+							<a class="p-header__nav-drawer--link" href="./#">
+								<div class="p-header__nav-drawer--text">ご利用料金</div>
+								<div class="p-header__nav-drawer--icon-arrow">
+									<img src="../assets/img/drawer-arrow.svg" alt="" />
+								</div>
+							</a>
+						</div>
+						<div class="p-header__nav-drawer--item">
+							<a class="p-header__nav-drawer--link" href="./#">
+								<div class="p-header__nav-drawer--text">ご利用までの流れ</div>
+								<div class="p-header__nav-drawer--icon-arrow">
+									<img src="../assets/img/drawer-arrow.svg" alt="" />
+								</div>
+							</a>
+						</div>
+						<div class="p-header__nav-drawer--item">
+							<a class="p-header__nav-drawer--link" href="./#">
+								<div class="p-header__nav-drawer--text">よくある質問</div>
+								<div class="p-header__nav-drawer--icon-arrow">
+									<img src="../assets/img/drawer-arrow.svg" alt="" />
+								</div>
+							</a>
+						</div>
+					</div>
+				</nav>
+			</div>
 		</div>
 	</header>
 </body>

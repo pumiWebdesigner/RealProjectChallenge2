@@ -1,0 +1,43 @@
+@use "../global" as *;
+
+.c-header__hamburger--button {
+  width: 27px;
+  height: 27px;
+  display: block;
+  transition: 0.5s;
+  position: relative;
+  @include mq(pc) {
+    display: none;
+  }
+}
+.drawer-bar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 27px;
+  height: 1.5px;
+  border-radius: 4px;
+  background: var(--gray, #333);
+  transition: 0.5s;
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      top: calc(7px * #{$i} + 1px);
+    }
+  }
+
+  .drawer-open & {
+    top: 15px;
+    left: 5px;
+    @for $i from 1 through 3 {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

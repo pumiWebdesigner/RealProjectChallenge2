@@ -78,7 +78,8 @@ function compileSass() {
 function watch() {
   gulp.watch("./src/**/*.html", gulp.series(formatHTML, browserReload)); // HTMLファイルの変更を監視
   gulp.watch("./src/assets/sass/**/*.scss", gulp.series(compileSass, browserReload)); // Sassファイルの変更を監視
-  gulp.watch("./src/assets/js/**/*.js", gulp.series(minJS, browserReload)); // jsファイルの変更を監視
+  // gulp.watch("./src/assets/js/**/*.js", gulp.series(minJS, browserReload)); // jsファイルの変更を監視
+  gulp.watch("./src/assets/js/**/*.js", gulp.series(normalJS, browserReload)); // jsファイルの変更を監視
   gulp.watch("./src/assets/img/**/*", gulp.series(copyImage, browserReload)); // 画像ファイルの変更を監視
   gulp.watch("./src/**/*.ejs", gulp.series(compileEJS, browserReload)); // HTMLファイルの変更を監視
   // gulp.watch("../**/*.php", browserReload); // phpファイルの変更を監視
@@ -109,6 +110,9 @@ function minJS() {
       })
     )
     .pipe(gulp.dest("./public/assets/js/"));
+}
+function normalJS() {
+  return gulp.src("./src/assets/js/**/*.js").pipe(gulp.dest("./public/assets/js/"));
 }
 
 function formatHTML() {
@@ -148,7 +152,7 @@ exports.test777 = test;
 exports.hint = htmlHint;
 
 // wacthする前の初回出力ファイル作成
-exports.build = gulp.parallel(compileEJS, formatHTML, minJS, compileSass, copyImage);
+exports.build = gulp.parallel(compileEJS, formatHTML, minJS, normalJS, compileSass, copyImage);
 // 初回以外の出力ファイル作成
 // ブラウザ表示、変更監視まとめて実行
 exports.dev = gulp.parallel(browserInit, watch);

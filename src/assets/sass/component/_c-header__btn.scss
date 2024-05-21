@@ -1,0 +1,56 @@
+@use "../global" as *;
+
+.c-header__btn {
+  width: 160px;
+  height: 56px;
+  border-radius: 40px;
+  background: var(--accent, #ff8b71);
+  box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 19.2px */
+  letter-spacing: 3.2px;
+  display: grid;
+  place-items: center;
+  @include mq(sp) {
+    // width: 128px;
+    height: 40px;
+    padding: 8px;
+    justify-content: center;
+
+    color: var(--White, #fff);
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+
+.c-header__btn--request {
+  @include mq(sp) {
+    display: none;
+  }
+}
+.c-header__btn--new {
+  @include mq(sp) {
+    padding-right: 22px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      width: 15px;
+      height: 29px;
+      background: url("../img/header-btn-icon.svg") no-repeat center;
+      z-index: 1;
+    }
+  }
+}
