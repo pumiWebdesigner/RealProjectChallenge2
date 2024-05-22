@@ -6,6 +6,7 @@
   @include mq(sp-tab) {
     height: var(--height-sp-header);
   }
+  // position: fixed;
 }
 
 .p-header__inner {
@@ -114,7 +115,7 @@
   background: var(--gradation, linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), linear-gradient(180deg, #007adf 0%, #00ecbc 100%));
   position: fixed;
   width: 100%;
-  height: calc(100vh - var(--height-pc-header));
+  height: calc(100vh - var(--height-sp-header));
   top: var(--height-sp-header);
   right: -100%;
   z-index: var(--layer-drawer);

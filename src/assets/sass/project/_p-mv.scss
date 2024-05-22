@@ -1,0 +1,257 @@
+@use "../global" as *;
+
+.p-mv {
+  // margin-top: var(--height-pc-header);
+  // @include mq(sp-tab) {
+  //   margin-top: var(--height-sp-header);
+  // }
+  // background: white;
+  // height: 533px;
+  height: 640px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/mv-wave.png") no-repeat bottom center;
+    // z-index: 1;
+  }
+  @include mq(sp-tab) {
+    height: 514px;
+  }
+}
+.p-mv__inner {
+  max-width: 1920px;
+  margin-inline: auto;
+  height: inherit;
+}
+
+.p-mv__contents {
+  position: relative;
+  width: 100%;
+  height: inherit;
+}
+
+.p-mv__left {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 627px;
+  height: 640px;
+  z-index: 2;
+  @include mq(sp-tab) {
+    width: revert;
+  }
+}
+
+.p-mv__top {
+  display: flex;
+  align-items: center;
+  margin-left: 142px;
+  gap: 36px;
+  @include mq(sp-tab) {
+    margin-left: 50px;
+  }
+}
+
+.p-mv__left--img {
+  width: 347.267px;
+  height: 345.264px;
+  img {
+    aspect-ratio: 347/345;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include mq(sp-tab) {
+    display: none;
+  }
+}
+
+.p-mv__left--message {
+  color: var(--gray, #333);
+  font-family: "Noto Serif JP";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 96px */
+  span.small {
+    color: var(--gray, #333);
+    font-family: "Noto Serif JP";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  white-space: nowrap;
+  @include mq(sp-tab) {
+    color: var(--gray, #333);
+    font-family: "Noto Serif JP";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 45px */
+    span.small {
+      color: var(--gray, #333);
+      font-family: "Noto Serif JP";
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}
+
+.p-mv__labels {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-left: 45px;
+  @include mq(sp-tab) {
+    flex-direction: column;
+    align-items: revert;
+  }
+  picture {
+    width: 275px;
+    height: 273px;
+    img {
+      aspect-ratio: 275/273;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include mq(sp-tab) {
+      aspect-ratio: 582/409;
+      width: 175px;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.p-mv__left--label {
+  // width: 275px;
+  // height: 273px;
+  // img {
+  //   aspect-ratio: 275/273;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+  // @include mq(sp-tab) {
+  //   aspect-ratio: 582/409;
+  //   width: 175px;
+  //   height: auto;
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+  //     object-fit: cover;
+  //   }
+  // }
+}
+
+.p-mv__right {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  // background: url("../../img/mv-img.png");
+  //  lightgray -0.227px 0px / 104.979% 107.344% no-repeat;
+  z-index: 1;
+  @include mq(sp-tab) {
+    top: revert;
+    bottom: 0;
+  }
+  picture {
+    display: block;
+    width: 692px;
+    height: 640px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include mq(sp-tab) {
+      width: 319px;
+      height: 378px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.p-mv__right--img-lady {
+  // width: 692px;
+  // height: 640px;
+  // img {
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+  // @include mq(sp-tab) {
+  //   width: 319px;
+  //   height: 378px;
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+  //     object-fit: cover;
+  //   }
+  // }
+}
+
+.p-mv__right--text {
+  position: absolute;
+  top: 27px;
+  right: 68px;
+  width: 29px;
+  height: auto;
+  text-align: end;
+  writing-mode: vertical-rl;
+
+  color: var(--gray, #6c6e6f);
+  font-family: Yomogi;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 37px; /* 115.625% */
+
+  @include mq(sp-tab) {
+    color: var(--gray, #6c6e6f);
+    font-family: Yomogi;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+
+    top: -100px;
+  }
+}
+
+.p-mv__right--img-bubble {
+  content: "";
+  position: absolute;
+  top: 34px;
+  right: 21px;
+  width: 16px;
+  height: 49px;
+  @include mq(sp-tab) {
+    top: -100px;
+  }
+}
+
+// 横スクロールチェック
+* {
+  outline: 1px solid red;
+  border: 1px solid blue;
+}
