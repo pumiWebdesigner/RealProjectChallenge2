@@ -16,7 +16,7 @@
   letter-spacing: 3.2px;
   display: grid;
   place-items: center;
-  @include mq(sp) {
+  @include mq(sp-tab) {
     // width: 128px;
     height: 40px;
     padding: 8px;
@@ -33,12 +33,12 @@
 }
 
 .c-header__btn--request {
-  @include mq(sp) {
+  @media (max-width: 1200px) {
     display: none;
   }
 }
 .c-header__btn--new {
-  @include mq(sp) {
+  @include mq(sp-tab) {
     padding-right: 22px;
     position: relative;
     &::after {

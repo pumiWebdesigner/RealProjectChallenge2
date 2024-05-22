@@ -1,6 +1,53 @@
-<footer class="footer">
-    <div class="footer__inner inner">
-      <div class="footer__copyright">Copyright &copy; 2024 Logo All rights reserved.</div>
+<!-- prettier-ignore -->
+<%_
+const menus = [ 
+  { 
+    name:"特長" ,
+    path : `${path}/#` 
+  }, 
+  { 
+    name:"お客様の声" ,
+    path : `${path}/#` 
+  }, 
+  { 
+    name:"ご利用料金" ,
+    path : `${path}/#` 
+  }, 
+  { 
+    name:"ご利用までの流れ" ,
+    path : `${path}/#` 
+  }, 
+  { 
+    name:"よくある質問" ,
+    path : `${path}/#` 
+  },
+  { 
+    name:"特定商取引法に基づく表記" ,
+    path : `${path}/#` 
+  },
+]; _%>
+
+<footer class="p-footer">
+    <div class="p-footer__inner">
+      <ul class="p-footer__nav">
+        <%_ menus.forEach(menu => { _%>
+        <li class="p-footer__nav--item">
+          <a class="p-footer__link" href="<%= menu.path %>"><%= menu.name %></a>
+        </li>
+        <%_ }); _%>
+      </ul>
+      <div class="p-footer__logo">
+        <!-- <a href="<%= path %>/index.html">Logo</a> -->
+        <a class="p-footer__logo-link" href="<%= path %>/index.html">
+          <img src="../assets/img/footer-icon.webp" alt="" />
+        </a>
+      </div>
+      <div class="p-footer__message">
+        このサイトは株式会社コスモスエンタープライズ様のご協力のもと作成したコーディング用の練習課題です。実在の人物・団体とは関係ありません。
+      </div>
+      <div class="p-footer__copyright">
+        Copyright &copy;SUISO POT All rights reserved.
+      </div>
     </div>
   </footer>
 </body>
