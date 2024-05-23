@@ -1,0 +1,37 @@
+@use "../global" as *;
+
+.p-eikyou {
+  background: var(--accent-Blue, #82bfed);
+  opacity: 0.4;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 90px;
+    height: 50px;
+    transform: translateX(-50%);
+    // background: url("../img/eikyou-triangle.svg") no-repeat;
+    clip-path: var(--clip-triangle-bottom);
+    background: var(--accent-Blue, #82bfed);
+    // opacity: 0.4;
+  }
+}
+
+.p-eikyou__text {
+  color: var(--gray, #333);
+  text-align: center;
+
+  /* H2　32 */
+  font-family: "Noto Sans JP";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%; /* 54.4px */
+  letter-spacing: 0.96px;
+}

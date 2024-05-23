@@ -1,18 +1,10 @@
 @use "../global" as *;
 
 .l-inner {
-  width: $inner-width;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include mq("tab") {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  @include mq("sp") {
-    padding-left: 16px;
-    padding-right: 16px;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: size-calc(20, 220, 1024, 1440);
+  @include mq(sp-tab) {
+    padding-inline: revert;
   }
 }

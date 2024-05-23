@@ -13,6 +13,7 @@ const cssSorter = require("css-declaration-sorter"); //cssのプロパティを�
 const mmq = require("gulp-merge-media-queries"); // メディアクエリをまとめるプラグイン（容量圧縮に効果ある（見やすさも向上？）
 
 const browserSync = require("browser-sync"); // ブラウザの自動読み込み、リロード
+// const browserSync = require("browser-sync").create(); // ブラウザの自動読み込み、リロードChatGPT提案
 const cleanCss = require("gulp-clean-css"); //cssの圧縮
 const uglify = require("gulp-uglify"); //jsの圧縮
 const rename = require("gulp-rename"); //ファイル名変更
@@ -74,12 +75,13 @@ function compileSass() {
       })
     )
     .pipe(gulp.dest("./public/assets/css/")); // 出力ディレクトリに書き出し
-  // .pipe(gulp.dest("../css/")); // 出力ディレクトリに書き出し
+  // .pipe(browserSync.stream()); // 即座に反映 // 行 56-57
 }
 
 function watch() {
   gulp.watch("./src/**/*.html", gulp.series(formatHTML, browserReload)); // HTMLファイルの変更を監視
   gulp.watch("./src/assets/sass/**/*.scss", gulp.series(compileSass, browserReload)); // Sassファイルの変更を監視
+  // gulp.watch("./src/assets/sass/**/*.scss", gulp.series(compileSass)); // ｃss処理側でリロードするので、ここではリロードしない
   // gulp.watch("./src/assets/js/**/*.js", gulp.series(minJS, browserReload)); // jsファイルの変更を監視
   gulp.watch("./src/assets/js/**/*.js", gulp.series(normalJS, browserReload)); // jsファイルの変更を監視
   gulp.watch("./src/assets/img/**/*", gulp.series(copyImage, browserReload)); // 画像ファイルの変更を監視
@@ -158,6 +160,7 @@ exports.build = gulp.parallel(compileEJS, formatHTML, minJS, normalJS, compileSa
 // 初回以外の出力ファイル作成
 // ブラウザ表示、変更監視まとめて実行
 exports.dev = gulp.parallel(browserInit, watch);
+// exports.dev = gulp.series(browserInit, watch);
 // 画面表示
 exports.browserInit = browserInit;
 // 変更監視

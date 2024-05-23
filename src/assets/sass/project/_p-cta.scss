@@ -1,0 +1,119 @@
+@use "../global" as *;
+
+.p-cta {
+  // background: lightgray 50% / cover no-repeat, var(--White, #fff);
+  padding: 40px 292px 43px 292px;
+  @include mq(sp-tab) {
+    padding: 24px 15px;
+  }
+}
+
+.p-cta__inner {
+}
+.p-cta__content {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 856/327;
+
+  picture,
+  source,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include mq(sp-tab) {
+    aspect-ratio: 360/195;
+  }
+}
+
+.p-cta__contents2 {
+  background: linear-gradient(180deg, rgba(205, 251, 243, 0.7) 0%, rgba(205, 230, 250, 0) 100%), url("../img/cta_img.png") lightgray 50% / cover no-repeat;
+}
+.p-cta__contents {
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px 0px #dae4ee;
+  display: flex;
+  justify-content: center;
+}
+
+.p-cta__left {
+  width: 30%;
+}
+
+.p-cta__img-pot {
+  margin-top: 31px;
+  width: 151px;
+  height: 265px;
+  aspect-ratio: 151/265;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.p-cta__right {
+  flex: 1;
+}
+
+.p-cta__top {
+  color: var(--gray, #333);
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 28.8px */
+  position: relative;
+  padding-inline: 30px;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 23px;
+    background-color: #333;
+  }
+  &::before {
+    right: 0;
+    rotate: 20deg;
+  }
+
+  &::after {
+    left: 0;
+    rotate: -20deg;
+  }
+
+  display: inline-block;
+}
+
+.p-cta__middle {
+}
+
+.p-cta__middle--text {
+}
+
+.p-cta__middle--text-upper {
+}
+
+.p-cta__middle--text-dot {
+}
+
+.p-cta__middle--text-main {
+}
+
+.p-cta__middle--text-sub {
+}
+
+.p-cta__middle--btn {
+}
+
+.p-cta__bottom {
+}
+
+.p-cta__bottom--text {
+}

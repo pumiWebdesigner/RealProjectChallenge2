@@ -1,0 +1,155 @@
+@use "../global" as *;
+
+.p-onayami {
+  margin-top: 43px;
+  padding-top: 80px;
+  // background: linear-gradient(0deg, rgba(200, 223, 239, 0.25) 0%, rgba(200, 223, 239, 0.25) 100%), url("../img/onayami-bg.png") lightgray 50% / cover no-repeat, var(--White, #fff);
+  background: url("../img/onayami-bg.png") no-repeat;
+  // position: relative;
+  @include mq(sp-tab) {
+    padding-top: 40px;
+  }
+}
+.p-onayami__inner {
+  padding-inline: 220px;
+  max-width: 1440;
+  margin-inline: auto;
+  @include mq(sp-tab) {
+    padding-inline: revert;
+  }
+}
+
+.p-onayami__message {
+  color: var(--gray, #333);
+
+  /* title */
+  font-family: "Noto Serif JP";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-align: center;
+
+  @include mq(sp-tab) {
+    color: var(--gray, #333);
+
+    /* SP title */
+    font-family: "Noto Serif JP";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.p-onayami__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  @include mq(sp-tab) {
+    gap: revert;
+    // justify-content: revert;
+  }
+  margin-top: 25px;
+  position: relative;
+}
+
+.p-onayami__img {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  // left: 0;
+  flex: 0 0 368px;
+  // width: 368px;
+  height: 368px;
+  aspect-ratio: 1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include mq(sp-tab) {
+    flex: 0 0 163px;
+    width: 163px;
+    height: 240px;
+    img {
+      aspect-ratio: 163/240;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.p-onayami__list {
+  @include mq(sp-tab) {
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: 15px;
+    // margin-right: 15px;
+    margin-left: -31px;
+    width: 250px;
+    height: 100%;
+  }
+}
+
+.p-onayami__list-item {
+  margin-top: 29px;
+  padding: 24px 24px 24px 80px;
+  border-radius: 16px;
+  border: 1px solid var(--gray, #6c6e6f);
+  background: var(--White, #fff);
+  @include mq(sp-tab) {
+    padding: 14px 16px 9.474px 8px;
+    border-radius: 8px;
+    border: 0.395px solid var(--gray, #6c6e6f);
+    background: var(--White, #fff);
+  }
+}
+
+.p-onayami__list-item--text {
+  color: var(--gray, #333);
+
+  /* H3　24 */
+  font-family: "Noto Sans JP";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.72px;
+  padding-left: 40px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url("../img/onayami-check.svg") no-repeat;
+  }
+  @include mq(sp-tab) {
+    color: var(--gray, #333);
+    font-feature-settings: "vhal" on;
+    font-family: "Noto Sans JP";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.48px;
+    padding-left: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: url("../img/onayami-check-sp.svg") no-repeat;
+    }
+  }
+  white-space: nowrap;
+}
